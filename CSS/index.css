@@ -1,0 +1,260 @@
+@import 'base.css';
+@import '../fonts/icomoon.css';
+body {
+  background: url('../images/bg.jpg') no-repeat;
+  height: 2000px;
+  font-size: 12px;
+}
+.billboard {
+  border: solid;
+  /* 边框图片资源 */
+  border-image-source: url(../images/border.png);
+  /* 边框图片宽度  值设置跟切图一样  才能有一比一的效果 */
+  border-image-width: 56px 56px 30px 150px;
+  /* 边框图片切图 
+    不带单位  
+    四刀：上下左右*/
+  border-image-slice: 56 56 30 150;
+}
+.title {
+  font-size: 21px;
+  color: #fff;
+  padding: 0 30px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+.title .line {
+  height: 20px;
+  width: 2px;
+  background-color: #00f2f1;
+  margin: 0 25px;
+}
+.title .error {
+  color: #1950c4;
+}
+.panel-body {
+  display: flex;
+}
+.panel-body .panel-detail {
+  width: 168px;
+  height: 236px;
+  margin-left: 22px;
+  background: url(../images/rect.png);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.panel-body .panel-detail li {
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+}
+.panel-body .panel-detail li:nth-child(1) .icon-dot {
+  color: #ed3f35;
+}
+.panel-body .panel-detail li:nth-child(2) .icon-dot {
+  color: #eacf19;
+}
+.panel-body .panel-detail p {
+  color: #fff7e0;
+  font-size: 27px;
+  margin-bottom: 14px;
+}
+.panel-body .panel-detail span {
+  font-size: 14px;
+}
+.header .logo {
+  width: 100%;
+}
+.contanier {
+  display: flex;
+  padding: 0 20px;
+}
+.contanier .contanierLeft {
+  width: 552px;
+  margin-top: -40px;
+}
+.contanier .contanierLeft .device {
+  height: 110px;
+  display: flex;
+}
+.contanier .contanierLeft .device li {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.contanier .contanierLeft .device li:nth-child(1) .icon-dot {
+  color: #006cff;
+}
+.contanier .contanierLeft .device li:nth-child(2) .icon-dot {
+  color: #6acca3;
+}
+.contanier .contanierLeft .device li:nth-child(3) .icon-dot {
+  color: #6acca3;
+}
+.contanier .contanierLeft .device li:nth-child(4) .icon-dot {
+  color: #ed3f35;
+}
+.contanier .contanierLeft .device p {
+  color: #fff7e0;
+  font-size: 27px;
+  margin-bottom: 14px;
+}
+.contanier .contanierLeft .device span {
+  font-size: 14px;
+}
+.contanier .contanierLeft .moitor {
+  height: 480px;
+  margin: 20px 0;
+}
+.contanier .contanierLeft .moitor .head {
+  height: 38px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #4dc2ed;
+  background-color: rgba(255, 255, 255, 0.251);
+}
+.contanier .contanierLeft .moitor .col1 {
+  width: 175px;
+  padding-left: 35px;
+}
+.contanier .contanierLeft .moitor .col2 {
+  width: 195px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.contanier .contanierLeft .moitor .col3 {
+  flex: 1;
+  margin-left: 67px;
+}
+.contanier .contanierLeft .moitor li {
+  display: flex;
+  height: 38px;
+  align-items: center;
+}
+.contanier .contanierLeft .point {
+  height: 340px;
+  padding: 0 36px;
+}
+.contanier .contanierLeft .point .point-chart {
+  flex: 1;
+}
+.contanier .contanierMid {
+  flex: 1;
+  margin: 0 20px;
+}
+.contanier .contanierMid .mid_title {
+  font-size: 21px;
+  color: #fff;
+  margin-bottom: 17px;
+}
+.contanier .contanierMid .migration {
+  height: 526px;
+}
+.contanier .contanierMid .user {
+  height: 340px;
+  margin-top: 20px;
+  padding: 0 36px;
+}
+.contanier .contanierMid .user .usr-chart {
+  margin-top: -50px;
+  width: 260px;
+  height: 320px;
+  flex: 1;
+}
+.contanier .contanierRight {
+  width: 552px;
+  margin-top: -40px;
+}
+.contanier .contanierRight .order {
+  height: 148px;
+}
+.contanier .contanierRight .sell {
+  height: 248px;
+  margin: 20px 0;
+}
+.contanier .contanierRight .sell .sellDate {
+  display: flex;
+}
+.contanier .contanierRight .sell .sellDate li {
+  padding: 3px;
+  font-size: 16px;
+  margin-right: 20px;
+  color: #0ba5de;
+  cursor: pointer;
+}
+.contanier .contanierRight .sell .sellDate li.active {
+  color: #fff;
+}
+.contanier .contanierRight .sell .sell-chart {
+  margin-top: -18PX;
+  flex: 1;
+  width: 300px;
+  height: 180px;
+}
+.contanier .contanierRight .grop {
+  display: flex;
+  height: 232px;
+}
+.contanier .contanierRight .grop .channel {
+  flex: 1;
+  height: 232px;
+}
+.contanier .contanierRight .grop .channel .panel-body {
+  flex-wrap: wrap;
+}
+.contanier .contanierRight .grop .channel .panel-body li {
+  width: 50%;
+  padding: 0 36px 14px;
+}
+.contanier .contanierRight .grop .channel .panel-body li p {
+  font-weight: 700;
+  font-size: 26px;
+  color: white;
+}
+.contanier .contanierRight .grop .channel .panel-body li p::after {
+  content: '%';
+  font-size: 16px;
+  margin-left: 10px;
+}
+.contanier .contanierRight .grop .channel .panel-body li span {
+  font-size: 16px;
+}
+.contanier .contanierRight .grop .progress {
+  flex: 1;
+  margin-left: 20px;
+}
+.contanier .contanierRight .grop .progress .panel-body {
+  display: block;
+}
+.contanier .contanierRight .grop .progress .progress-chart {
+  height: 70px;
+  background-color: #fff;
+}
+.contanier .contanierRight .grop .progress .panel-detail {
+  background: none;
+  flex-direction: row;
+  margin-left: 0;
+}
+.contanier .contanierRight .grop .progress .panel-detail li {
+  padding: 0;
+}
+.contanier .contanierRight .grop .progress .panel-detail li p {
+  font-size: 20px;
+}
+.contanier .contanierRight .grop .progress .panel-detail li:nth-child(1) .icon-dot {
+  color: #6acca3;
+}
+.contanier .contanierRight .grop .progress .panel-detail li:nth-child(2) .icon-dot {
+  color: #ed3f35;
+}
+.contanier .contanierRight .hot {
+  height: 283px;
+  margin-top: 20px;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>边框图片处理</title>
+    <style>
+        .box {
+            width: 600px;
+            height: 300px;
+            background-color: #00040f;
+            margin: 200PX;
+            /* IE盒子模型  width 不含边框宽度*/
+            box-sizing: border-box;
+            /* 边框图片必须设置边框才能生效  注意：border属性要写在border-image属性之前，否则图片会被层叠掉*/
+            border: solid;
+            /* 边框图片资源 */
+            border-image-source: url(./images/border.png);
+            /* 边框图片宽度  值设置跟切图一样  才能有一比一的效果 */
+            border-image-width: 56px 56px 30px 150px;
+            /* 边框图片切图 
+            不带单位  
+            四刀：上下左右*/
+            border-image-slice: 56 56 30 150;
+
+            /* 设置平铺 重复    注意：当宽度设置过小时，默认拉伸可能存在断裂的情况，添加repeat可以解决*/
+            /* border-image-repeat: repeat; */
+        }
+
+        .box2 {
+            width: 300px;
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="box box2"></div>
+</body>
+
+</html>

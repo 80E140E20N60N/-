@@ -1,0 +1,297 @@
+// 导入 另外的样式到less中
+@import './base.css';
+@import '../fonts/icomoon.css';
+
+body{
+    background: url('../images/bg.jpg') no-repeat;
+    height: 2000px;
+    font-size: 12px;
+}
+
+// 看板框
+.billboard{
+    border: solid;
+    /* 边框图片资源 */
+    border-image-source: url(../images/border.png);
+    /* 边框图片宽度  值设置跟切图一样  才能有一比一的效果 */
+    border-image-width: 56px 56px 30px 150px;
+    /* 边框图片切图 
+    不带单位  
+    四刀：上下左右*/
+    border-image-slice: 56 56 30 150;
+}
+// 标题
+.title{
+    font-size: 21px;
+    color: #fff;
+    padding: 0 30px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    .line{
+        height: 20px;
+        width: 2px;
+        background-color: #00f2f1;
+        margin: 0 25px;
+    }
+    .error{
+        color: #1950c4;
+    }
+}
+
+// 看板
+.panel-body{
+  display: flex;
+  .panel-detail{
+    width: 168px;
+    height: 236px;
+    margin-left: 22px;
+    background: url(../images/rect.png) ;
+    background-size: cover;
+    display: flex;
+    // 主轴方向 数值从上到下排列
+    flex-direction:column;
+    // 主轴方向  等距环绕
+    justify-content: space-around;
+   
+    li{
+      padding: 0 30px;
+      display: flex;  
+      // 主轴方向 排列
+      flex-direction:column;
+      &:nth-child(1) .icon-dot{
+          color: #ed3f35;
+      }
+      &:nth-child(2) .icon-dot{
+          color: #eacf19;
+      }
+  
+    }
+    p{
+      color: #fff7e0;
+      font-size: 27px;
+      margin-bottom: 14px;
+    }
+    span{
+      font-size: 14px;         
+    }
+  }
+}
+
+.header{
+    .logo{
+        width: 100%;
+    }
+}
+
+.contanier{
+    display: flex;
+    padding: 0 20px;
+    .contanierLeft{       
+        width: 552px;
+        margin-top: -40px;
+        .device{
+            height: 110px;
+            display: flex;
+            li{
+                flex: 1;
+                display: flex;
+                // 主轴方向 居中
+                justify-content: center;
+                // 侧轴方向 居中
+                align-items: center;
+                // 主轴方向 排列
+                flex-direction:column;
+
+                &:nth-child(1) .icon-dot{
+                    color: #006cff;
+                }
+                &:nth-child(2) .icon-dot{
+                    color: #6acca3;
+                }
+                &:nth-child(3) .icon-dot{
+                    color: #6acca3;
+                }
+                &:nth-child(4) .icon-dot{
+                    color: #ed3f35;
+                }
+            }
+            p{
+                color: #fff7e0;
+                font-size: 27px;
+                margin-bottom: 14px;
+            }
+            span{
+                font-size: 14px;
+                   
+            }
+           
+
+        }
+        .moitor{
+            height: 480px;
+            margin: 20px 0;
+
+            .head{
+              height: 38px;
+              display: flex;
+              align-items: center;
+              font-size: 14px;
+              color: #4dc2ed;
+              background-color: rgba(255, 255, 255, 0.251);        
+            }
+           
+            .col1{
+              width: 175px;
+              padding-left: 35px;
+            }
+            .col2{
+              width: 195px;
+              // 单行超出省略号
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+            }
+            .col3{
+              flex: 1;
+              margin-left: 67px;
+            }
+            li{
+              display: flex;
+              height: 38px;
+              align-items: center;
+            }
+
+        }
+        .point{
+            height: 340px;
+            padding: 0 36px;
+            .point-chart{
+              flex: 1;
+              // width: 600px;             
+            }
+        }
+    }
+    .contanierMid{
+        flex: 1;
+        margin: 0 20px;
+        .mid_title{
+            font-size: 21px;
+            color: #fff;
+            margin-bottom: 17px;
+        }
+        .migration {
+            height: 526px;
+        }
+      
+        .user {
+            height: 340px;
+            margin-top: 20px;
+            padding: 0 36px;
+            .usr-chart{
+              margin-top: -50px;
+              width: 260px;
+              height: 320px;
+              flex: 1;          
+            }
+        }
+    }
+    .contanierRight{
+        width: 552px;
+        margin-top: -40px;
+        .order {
+            height: 148px;
+        }
+        
+        .sell {
+            height: 248px;
+            margin: 20px 0;
+            .sellDate{
+              display: flex;
+              li{
+                padding: 3px;
+                font-size: 16px;
+                margin-right: 20px;
+                color: #0ba5de;
+                cursor: pointer;
+                &.active{
+                  color: #fff;
+                }
+              }
+            }
+            .sell-chart{
+              margin-top: -18PX;            
+              flex: 1;
+              width: 300px;
+              height: 180px;
+              // background-color: #fff;
+            }
+        }
+        
+        .grop{
+            display: flex;
+            height: 232px;
+            .channel {               
+               flex: 1;
+               height: 232px;
+               .panel-body{
+                 flex-wrap: wrap;
+                 li{
+                   width: 50%;
+                   padding: 0 36px 14px;
+                   p{
+                     font-weight: 700;
+                     font-size: 26px;
+                     color: white;
+                     &::after{
+                       content: '%';
+                       font-size: 16px;
+                       margin-left: 10px;
+                     }
+                   }
+                   span{
+                     font-size: 16px;
+                   }
+                 }
+               }
+              
+            }
+            
+            .progress {               
+                flex: 1;
+                margin-left: 20px;  
+                .panel-body{
+                  display: block;
+                }
+                .progress-chart{
+                  height: 70px;
+                  background-color: #fff;
+                }
+                 
+                .panel-detail{               
+                    background:none;
+                    flex-direction: row;
+                    margin-left: 0;
+                    li{
+                      padding: 0;
+                      p{
+                        font-size: 20px;
+                      }
+                       &:nth-child(1) .icon-dot{
+                        color: #6acca3;
+                      }
+                       &:nth-child(2) .icon-dot{
+                        color: #ed3f35;
+                      }
+                    }
+                }                               
+            }
+        }
+       
+        
+        .hot {
+            height: 283px;
+            margin-top: 20px;
+        }
+    }
+}

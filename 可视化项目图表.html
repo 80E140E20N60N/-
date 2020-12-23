@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数据可视化项目图表</title>
+  <script src="./echarts.js"></script>
+</head>
+
+<body>  
+  <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+  <div id="main" style="width: 600px;height:400px;"></div>
+
+  <script>
+    let myChart = echarts.init(document.getElementById('main'));
+    let item = {
+      value: 1200,
+      itemStyle: {
+        color: '#254065'
+      }
+    }
+    let option = {
+      xAxis: {
+        data: ['上海', '广州', '北京', '深圳', '合肥', '', '......', '', '杭州', '厦门', '济南', '成都', '重庆']
+      },
+      yAxis: {},
+
+      series: [
+        {
+          type: 'bar',
+          // 整体样式
+          itemStyle: {
+            color: new echarts.graphic.LinearGradient(
+              0, 0, 0, 1,
+              [
+                { offset: 0, color: '#00eff6' },   //渐变色顶部
+                { offset: 1, color: '#0067cf' }    //渐变色底部
+              ]
+            )
+          },
+          data: [2100, 1900, 1700, 1560, 1400, item, item, item, 900, 750, 600, 480, 240],
+
+        }
+      ]
+    };
+    // 四、 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+  </script>
+
+</body>
+
+</html>

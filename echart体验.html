@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eachat体验</title>
+  <script src="./echarts.js"></script>
+</head>
+
+<body>
+  <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+  <div id="main" style="width: 600px;height:400px;"></div>
+  <script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+    // 指定图表的配置项和数据
+    var option = {
+      title: {
+        text: 'ECharts 示例'
+      },
+      tooltip: {},
+      // 说明图例
+      legend: {
+        data: ['销量', '销售计划']
+      },
+      xAxis: {
+        data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
+      },
+      yAxis: {},
+      // color: ['tomato', '#eacf19'],
+      // 设置渐变色
+      // color: [
+      //   new echarts.graphic.LinearGradient(
+      //     0, 0, 1, 1,
+      //     [
+      //       { offset: 0.1, color: 'tomato' },
+      //       { offset: 0.3, color: 'green' },
+      //       { offset: 1, color: 'black' }
+      //     ]
+      //   ),
+      //   new echarts.graphic.LinearGradient(
+      //     0, 0, 0, 1,
+      //     [
+      //       { offset: 0, color: '#eacf19' },   //渐变色顶部
+      //       { offset: 0.7, color: '#fff7e0' }, //渐变色中部
+      //       { offset: 1, color: '#000000' }    //渐变色底部
+      //     ]
+      //   )
+      // ],
+
+      series: [
+        {
+          name: '销量',
+          type: 'bar',
+          // 整体样式
+          itemStyle: {
+            color: 'tomato'
+          },
+          data: [5, 20, {
+            value: 30,       //设置单个颜色
+            itemStyle: {
+              color: 'black'
+            }
+          }, 10, 10, 20],
+        },
+
+        {
+          name: '销售计划',
+          type: 'bar',
+          // 整体样式
+          itemStyle: {
+            color: '#eacf19'
+          },
+          data: [15, 23, 38, 18, 14, 30]
+        }
+      ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数据可视化</title>
+  <link rel="stylesheet" href="./CSS/index.css">
+  <!-- 引入 ECharts 文件 -->
+  <script src="./echarts.js"></script>
+</head>
+
+<body>
+  <header class="header">
+    <img class="logo" src="./images/logo.png" alt="">
+  </header>
+
+  <div class="contanier">
+    <!-- 左边 -->
+    <div class="contanierLeft">
+      <!-- 设备面板 -->
+      <ul class="device billboard">
+        <li>
+          <p>2,190</p>
+          <span>
+            <span class="icon-dot"></span> 设备总数
+          </span>
+        </li>
+        <li>
+          <p>2,190</p>
+          <span><span class="icon-dot"></span> 设备总数</span>
+        </li>
+        <li>
+          <p>2,190</p>
+          <span><span class="icon-dot"></span> 设备总数</span>
+        </li>
+        <li>
+          <p>2,190</p>
+          <span><span class="icon-dot"></span> 设备总数</span>
+        </li>
+      </ul>
+
+      <!-- 监控 -->
+      <div class="moitor billboard">
+        <h3 class="title">
+          <span>故障设备监控</span>
+          <i class="line"></i>
+          <span class="error">异常设备监控</span>
+        </h3>
+        <div class="head">
+          <sapn class="col1">故障时间</sapn>
+          <sapn class="col2">设备地址</sapn>
+          <sapn class="col3">异常代码</sapn>
+        </div>
+        <ul>
+          <li>
+            <span class="col1">20201213</span>
+            <span class="col2">哈哈哈哈哈哈哈哈哈哈哈</span>
+            <span class="col3">10000000</span>
+          </li>
+          <li>
+            <span class="col1">20201213</span>
+            <span class="col2">哈哈哈哈哈哈哈哈哈哈哈</span>
+            <span class="col3">10000000</span>
+          </li>
+          <li>
+            <span class="col1">20201213</span>
+            <span class="col2">哈哈哈哈哈哈哈哈哈哈哈</span>
+            <span class="col3">10000000</span>
+          </li>
+          <li>
+            <span class="col1">20201213</span>
+            <span class="col2">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</span>
+            <span class="col3">10000000</span>
+          </li>
+          <li>
+            <span class="col1">20201213</span>
+            <span class="col2">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈啊哈</span>
+            <span class="col3">10000000</span>
+          </li>
+          <li>
+            <span class="col1">20201213</span>
+            <span class="col2">哈哈哈哈哈哈哈哈哈哈哈</span>
+            <span class="col3">10000000</span>
+          </li>
+          <li>
+            <span class="col1">20201213</span>
+            <span class="col2">哈哈哈哈哈哈哈哈哈哈哈</span>
+            <span class="col3">10000000</span>
+          </li>
+          <li>
+            <span class="col1">20201213</span>
+            <span class="col2">哈哈哈哈哈哈哈哈哈哈哈</span>
+            <span class="col3">10000000</span>
+          </li>
+          <li>
+            <span class="col1">20201213</span>
+            <span class="col2">哈哈哈哈哈哈哈哈哈哈哈</span>
+            <span class="col3">10000000</span>
+          </li>
+        </ul>
+
+      </div>
+
+      <!-- 点位统计 -->
+      <div class="point billboard">
+        <h3 class="title">点位分布统计</h3>
+        <div class="panel-body">
+          <div class="point-chart"></div>
+          <div class="panel-detail">
+            <li>
+              <p>322,190</p>
+              <span>
+                <span class="icon-dot"></span> 点位总数
+              </span>
+            </li>
+            <li>
+              <p>418</p>
+              <span>
+                <span class="icon-dot"></span> 本月新增
+              </span>
+            </li>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 中间 -->
+    <div class="contanierMid">
+      <h3 class="mid_title"><i class="icon-cube" style="color: #4697fe; margin-right: 6px;"></i>设备数据统计</h3>
+      <!-- 迁徙图 -->
+      <div class="migration"></div>
+      <!-- 用户总量 -->
+      <div class="user billboard">
+        <h3 class="title"> 全国用户总量统计</h3>
+        <div class="panel-body">
+          <div class="usr-chart"></div>
+          <div class="panel-detail">
+            <li>
+              <p>120,899</p>
+              <span>
+                <span class="icon-dot"></span> 用户总量
+              </span>
+            </li>
+            <li>
+              <p>418</p>
+              <span>
+                <span class="icon-dot"></span> 本月新增
+              </span>
+            </li>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 右边 -->
+    <div class="contanierRight">
+      <!-- 订单 -->
+      <div class="order billboard">
+        <h3 class="title">
+          <span class="error">365天</span>
+          <i class="line"></i>
+          <span>90天</span>
+          <i class="line"></i>
+          <span class="error">30天</span>
+          <i class="line"></i>
+          <span class="error">24小时</span>
+        </h3>
+      </div>
+
+      <!-- 销售统计 -->
+      <div class="sell billboard">
+        <!-- 标题 -->
+        <h3 class="title">
+          <span>销售额统计</span>
+          <i class="line"></i>
+          <ul class="sellDate">
+            <li>年</li>
+            <li>季</li>
+            <li class="active">月</li>
+            <li>周</li>
+          </ul>
+
+        </h3>
+        <!-- 内容 -->
+        <div class="panel-body">
+          <div class="sell-chart"></div>
+        </div>
+      </div>
+
+      <div class="grop">
+        <!-- 渠道分布 -->
+        <div class="channel billboard">
+          <h3 class="title">渠道分布</h3>
+          <div class="panel-body">
+            <li>
+              <p>39</p>
+              <span>
+                <span class="icon-plane"></span> 机场
+              </span>
+            </li>
+            <li>
+              <p>39</p>
+              <span>
+                <span class="icon-plane"></span> 机场
+              </span>
+            </li>
+            <li>
+              <p>39</p>
+              <span>
+                <span class="icon-plane"></span> 机场
+              </span>
+            </li>
+            <li>
+              <p>39</p>
+              <span>
+                <span class="icon-plane"></span> 机场
+              </span>
+            </li>
+          </div>
+        </div>
+        <!-- 销售进度 -->
+        <div class="progress billboard">
+          <h3 class="title">一季度销售进度</h3>
+          <div class="panel-body">
+            <div class="progress-chart">123</div>
+            <div class="panel-detail">
+              <li>
+                <p>1,899</p>
+                <span>
+                  <span class="icon-dot"></span> 销售额
+                </span>
+              </li>
+              <li>
+                <p>150%</p>
+                <span>
+                  <span class="icon-dot"></span> 同比增长
+                </span>
+              </li>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 热榜模块 -->
+      <div class="hot billboard"></div>
+    </div>
+  </div>
+
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/china.js"></script>
+  <script src="./js/echart-map.js"></script>
+  <script>
+    // 点位分布统计    
+    function pieChart(chartName) {
+      let option = {
+        series: [
+          //玫瑰
+          {
+            // 饼图
+            type: 'pie',
+            // 半径：如果只写一个数值，默认是实心的饼图，如果是数组，可以配置空心的饼图
+            radius: [10, 80],
+            // 水平方向坐标  垂直方向坐标
+            center: ['50%', '50%'],
+            roseType: 'area',
+            color: ['#006cff', '#60cda0', '#ed8884', '#ff9f7f', '#0096ff', '#9fe6b8', '#32c5e9', '#1d9dff'],
+            // 数据
+            data: [
+              { value: 20, name: '云南' },
+              { value: 26, name: '北京' },
+              { value: 24, name: '山东' },
+              { value: 25, name: '河北' },
+              { value: 20, name: '江苏' },
+              { value: 25, name: '浙江' },
+              { value: 30, name: '四川' },
+              { value: 42, name: '湖北' }
+            ],
+          }
+        ]
+      };
+      // 四、 使用刚指定的配置项和数据显示图表。
+      chartName.setOption(option);
+    }
+    let pointChart = echarts.init(document.querySelector('.point-chart'));
+    pieChart(pointChart);
+
+
+    // 用户总量统计
+    function barChart(chartName) {
+      let item = {
+        value: 1200,
+        itemStyle: {
+          color: '#254065'
+        }
+      }
+      let option = {
+        grid: {
+          left: 40,
+          right: 0,  //可以显示显示范围大小
+          show: true,
+          borderColor: 'rgba(0,242,241,0.3)'
+        },
+        xAxis: {
+          data: ['上海', '广州', '北京', '深圳', '合肥', '', '......', '', '杭州', '厦门', '济南', '成都', '重庆'],
+          axisLabel: {
+            // rotate: 45,
+            color: '#4c9bfd'
+          },
+          textStyle: {
+            fontSize: 12,
+          }
+
+        },
+
+        yAxis: {
+          // 坐标线颜色
+          axisLabel: {
+            color: '#4c9bfd',
+          },
+          // 横线颜色
+          splitLine: {
+            lineStyle: {
+              color: "#006e7d"
+            }
+          }
+        },
+
+        series: [
+          {
+            type: 'bar',
+            // 整体样式
+            itemStyle: {
+              color: new echarts.graphic.LinearGradient(
+                0, 0, 0, 1,
+                [
+                  { offset: 0, color: '#00eff6' },   //渐变色顶部
+                  { offset: 1, color: '#0067cf' }    //渐变色底部
+                ]
+              )
+            },
+            data: [2100, 1900, 1700, 1560, 1400, item, item, item, 900, 750, 600, 480, 240],
+
+          }
+        ]
+      };
+      // 四、 使用刚指定的配置项和数据显示图表。
+      chartName.setOption(option);
+    }
+    let usrChart = echarts.init(document.querySelector('.usr-chart'));
+    barChart(usrChart)
+
+    // 销售额统计折线图  
+    function lineChart(chartName) {
+      const data = [
+        [
+          [24, 40, 101, 134, 90, 230, 210, 230, 120, 230, 210, 120],
+          [40, 64, 191, 324, 290, 330, 310, 213, 180, 200, 180, 79]
+        ],
+        [
+          [23, 75, 12, 97, 21, 67, 98, 21, 43, 64, 76, 38],
+          [43, 31, 65, 23, 78, 21, 82, 64, 43, 60, 19, 34]
+        ],
+        [
+          [34, 87, 32, 76, 98, 12, 32, 87, 39, 36, 29, 36],
+          [56, 43, 98, 21, 56, 87, 43, 12, 43, 54, 12, 98]
+        ],
+        [
+          [43, 73, 62, 54, 91, 54, 84, 43, 86, 43, 54, 53],
+          [32, 54, 34, 87, 32, 45, 62, 68, 93, 54, 54, 24]
+        ]
+      ];
+
+      // 图标选项设置
+      let option = {
+        title: {
+          text: '单位：万',
+          left: 60,
+          top: 10,
+          textStyle:
+          {
+            fontSize: 16,//字体大小
+            color: '#3c7dcf'//字体颜色
+          },
+        },
+        tooltip: {
+          trigger: 'axis'
+        },
+        legend: {
+          data: ['预期销售额', '实际销售额'],
+          itemHeight: 16,//改变圆圈大小
+          left: 260,
+          top: 10,     //改变图例的位置
+          textStyle:
+          {
+            fontSize: 12,//字体大小
+            color: '#3c7dcf'//字体颜色
+          },
+        },
+        grid: {
+          // 上下左右 可以用来调整图表大小
+          top: 44,
+          left: 38,
+          right: '10%',
+          bottom: '3%',
+          containLabel: true,
+          show: true,
+          borderColor: 'rgba(0,242,241,0.3)'
+        },
+
+        xAxis: {
+          boundaryGap: false,      // 设置左右两侧是否留白
+          type: 'category',
+          data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+          axisLabel: {
+            color: "#4a97f8"   //坐标轴文字颜色
+          },
+        },
+        yAxis: {
+          type: 'value',
+          data: [0, 20, 40, 60, 80, 100],
+          axisLabel: {
+            color: "#4a97f8"   //坐标轴文字颜色
+          },
+          splitLine: {
+            lineStyle: {
+              color: "#016f83"  //Y轴分割线颜色
+            }
+          }
+        },
+        color: ['aqua', 'red'],  //设置颜色
+        series: [
+          {
+            name: '预期销售额',
+            type: 'line',
+            smooth: true,
+            data: data[2][0],
+          },
+          {
+            data: data[2][1],
+            type: 'line',
+            name: "实际销售额",
+            smooth: true,
+          },
+        ]
+
+      };
+
+      // 四、 使用刚指定的配置项和数据显示图表。
+      chartName.setOption(option);
+
+      // 点击及自动轮播
+      let $sellDate = $('.sellDate li');
+
+      $sellDate.click(function () {
+        let index = $(this).index();
+        $(this).addClass('active').siblings().removeClass('active');
+        let expectNum = data[index][0];
+        let actualNum = data[index][1];
+        // console.log(expectNum, actualNum);
+        option.series[0].data = expectNum;
+        option.series[1].data = actualNum;
+        chartName.setOption(option);
+      });
+
+      let key = 0;
+      let timeID = setInterval(function () {
+        key++;
+        if (key > 3) key = 0;
+        $sellDate.eq(key).click();
+      }, 3000)
+
+    }
+    let sellChart = echarts.init(document.querySelector('.sell-chart'));
+    lineChart(sellChart);
+
+  </script>
+</body>
+
+</html>

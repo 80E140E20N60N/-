@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>饼图</title>
+  <script src="./echarts.js"></script>
+</head>
+
+<body>
+  <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+  <div id="main" style="width: 800px;height:600px;border: 1px solid #000;margin: 200px;"></div>
+
+  <script>
+    let myChart = echarts.init(document.getElementById('main'));
+    let option = {
+      series: [
+        {
+          // 饼图
+          type: 'pie',
+          // 半径：如果只写一个数值，默认是实心的饼图，如果是数组，可以配置空心的饼图
+          radius: [0, 110],
+          // 水平方向坐标  垂直方向坐标
+          center: ['10%', '10%'],
+          // 玫瑰型
+          // roseType: 'radius',
+          label: {
+            show: false
+          },
+          // 数据
+          data: [
+            { value: 10, name: 'rose1' },
+            { value: 5, name: 'rose2' },
+            { value: 15, name: 'rose3' },
+            { value: 25, name: 'rose4' },
+            { value: 20, name: 'rose5' },
+            { value: 35, name: 'rose6' },
+            { value: 30, name: 'rose7' },
+            { value: 40, name: 'rose8' }
+          ]
+        },
+        //玫瑰
+        {
+          // 饼图
+          type: 'pie',
+          // 半径：如果只写一个数值，默认是实心的饼图，如果是数组，可以配置空心的饼图
+          radius: [10, 85],
+          // 水平方向坐标  垂直方向坐标
+          center: ['50%', '50%'],
+          roseType: 'area',
+          color: ['#006cff', '#60cda0', '#ed8884', '#ff9f7f', '#0096ff', '#9fe6b8', '#32c5e9', '#1d9dff'],
+          // 数据
+          data: [
+            { value: 20, name: '云南' },
+            { value: 26, name: '北京' },
+            { value: 24, name: '山东' },
+            { value: 25, name: '河北' },
+            { value: 20, name: '江苏' },
+            { value: 25, name: '浙江' },
+            { value: 30, name: '四川' },
+            { value: 42, name: '湖北' }
+          ],
+        },
+        //环
+        {
+          type: 'pie',
+          radius: [90, 120],
+          center: ['50%', '100%'],
+          avoidLabelOverlap: false,
+          label: {
+            show: false,
+            position: 'center'
+          },
+          emphasis: {
+            label: {
+              show: true,
+              fontSize: '30',
+              fontWeight: 'bold'
+            }
+          },
+          labelLine: {
+            show: false
+          },
+
+          data: [
+            {
+              value: 100, // 整体样式
+              itemStyle: { color: '#12274d' }
+            },
+            {
+              value: 100,
+            },
+            { value: 100 },
+            {
+              value: 100, itemStyle: {
+                color: new echarts.graphic.LinearGradient(
+                  0, 0, 0, 1,
+                  [
+                    { offset: 0, color: '#00eff6' },   //渐变色顶部
+                    { offset: 1, color: '#0067cf' }    //渐变色底部
+                  ]
+                )
+              }
+            },
+
+          ]
+
+        }
+      ]
+
+
+    };
+    // 四、 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+  </script>
+</body>
+
+</html>

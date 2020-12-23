@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>折线图</title>
+  <script src="./echarts.js"></script>
+</head>
+
+<body>
+  <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+  <div id="main" style="width: 800px;height:300px;border: 1px solid #000;margin: 200px;"></div>
+
+  <script>
+
+    let chartName = echarts.init(document.getElementById('main'));
+    lineChart(chartName);
+
+    function lineChart(chartName) {
+      const data = [
+        [
+          [24, 40, 101, 134, 90, 230, 210, 230, 120, 230, 210, 120],
+          [40, 64, 191, 324, 290, 330, 310, 213, 180, 200, 180, 79]
+        ],
+        [
+          [23, 75, 12, 97, 21, 67, 98, 21, 43, 64, 76, 38],
+          [43, 31, 65, 23, 78, 21, 82, 64, 43, 60, 19, 34]
+        ],
+        [
+          [34, 87, 32, 76, 98, 12, 32, 87, 39, 36, 29, 36],
+          [56, 43, 98, 21, 56, 87, 43, 12, 43, 54, 12, 98]
+        ],
+        [
+          [43, 73, 62, 54, 91, 54, 84, 43, 86, 43, 54, 53],
+          [32, 54, 34, 87, 32, 45, 62, 68, 93, 54, 54, 24]
+        ]
+      ];
+      // chartName = echarts.init(document.getElementById('main'));
+      let option = {
+        title: {
+          text: '单位：万',
+          left: 100,
+          top: "3%",
+          textStyle:
+          {
+            fontSize: 22,//字体大小
+            color: '#3c7dcf'//字体颜色
+          },
+        },
+        tooltip: {
+          trigger: 'axis'
+        },
+        legend: {
+          data: ['预期销售额', '实际销售额'],
+          itemHeight: 16,//改变圆圈大小
+          left: 400,
+          top: "3%",     //改变图例的位置
+          textStyle:
+          {
+            fontSize: 18,//字体大小
+            color: '#3c7dcf'//字体颜色
+          },
+        },
+        grid: {
+          left: '10%',
+          right: '10%',
+          bottom: '3%',
+          containLabel: true
+        },
+
+        xAxis: {
+          boundaryGap: false,      // 设置左右两侧是否留白
+          type: 'category',
+          data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+          axisLabel: {
+            color: "#4a97f8"   //坐标轴文字颜色
+          },
+        },
+        yAxis: {
+          type: 'value',
+          data: [0, 20, 40, 60, 80, 100],
+          axisLabel: {
+            color: "#4a97f8"   //坐标轴文字颜色
+          },
+          splitLine: {
+            lineStyle: {
+              color: "#016f83"  //Y轴分割线颜色
+            }
+          }
+        },
+        color: ['aqua', 'red'],  //设置颜色
+        series: [
+          {
+            name: '预期销售额',
+            type: 'line',
+            smooth: true,
+            data: data[2][0],
+          },
+          {
+            data: data[2][1],
+            type: 'line',
+            name: "实际销售额",
+            smooth: true,
+          },
+        ]
+
+      };
+      // 四、 使用刚指定的配置项和数据显示图表。
+      chartName.setOption(option);
+    }
+
+
+  </script>
+</body>
+
+</html>
